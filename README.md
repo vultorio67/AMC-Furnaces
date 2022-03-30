@@ -1,5 +1,7 @@
-# Iron Furnaces
+# AMC Furnaces
 Inspired by cpw's Iron Chests mod, adds a few different tiers of furnace.
+
+Thank you to Qelifern for this incredible mod, I juste add new furnaces that is present on my mod.
 
 # Forge
 <a href="https://www.curseforge.com/minecraft/mc-mods/iron-furnaces" target="_blank"><img src="http://cf.way2muchnoise.eu/short_237664.svg?badge_style=flat" /><a href="https://www.curseforge.com/minecraft/mc-mods/iron-furnaces" target="_blank"><img src="http://cf.way2muchnoise.eu/versions/237664.svg?badge_style=flat" /></a>
