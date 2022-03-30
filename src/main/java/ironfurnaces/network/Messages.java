@@ -1,7 +1,6 @@
 package ironfurnaces.network;
 
-import ironfurnaces.IronFurnaces;
-import net.minecraft.block.BlockState;
+import ironfurnaces.AmcFurnaces;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.network.NetworkRegistry;
 import net.minecraftforge.fml.network.simple.SimpleChannel;
@@ -15,7 +14,7 @@ public class Messages {
     }
 
     public static void registerMessages(String channelName) {
-        INSTANCE = NetworkRegistry.newSimpleChannel(new ResourceLocation(IronFurnaces.MOD_ID, channelName), () -> "1.0", s -> true, s -> true);
+        INSTANCE = NetworkRegistry.newSimpleChannel(new ResourceLocation(AmcFurnaces.MOD_ID, channelName), () -> "1.0", s -> true, s -> true);
 
         // Server side
 

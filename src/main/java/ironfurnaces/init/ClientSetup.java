@@ -1,16 +1,17 @@
 package ironfurnaces.init;
 
-import ironfurnaces.IronFurnaces;
+import ironfurnaces.AmcFurnaces;
 import ironfurnaces.gui.*;
 import net.minecraft.client.gui.ScreenManager;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 
-@Mod.EventBusSubscriber(modid = IronFurnaces.MOD_ID, value = Dist.CLIENT, bus = Mod.EventBusSubscriber.Bus.MOD)
+@Mod.EventBusSubscriber(modid = AmcFurnaces.MOD_ID, value = Dist.CLIENT, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class ClientSetup {
 
     public static void init(final FMLClientSetupEvent event) {
+        ScreenManager.register(Registration.ALPHARIUM_FURNACE_CONTAINER.get(), BlockAlphariumFurnaceScreen::new);
         ScreenManager.register(Registration.IRON_FURNACE_CONTAINER.get(), BlockIronFurnaceScreen::new);
         ScreenManager.register(Registration.GOLD_FURNACE_CONTAINER.get(), BlockGoldFurnaceScreen::new);
         ScreenManager.register(Registration.DIAMOND_FURNACE_CONTAINER.get(), BlockDiamondFurnaceScreen::new);

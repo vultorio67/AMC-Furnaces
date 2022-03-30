@@ -2,10 +2,7 @@ package ironfurnaces;
 
 import com.electronwill.nightconfig.core.file.CommentedFileConfig;
 import com.electronwill.nightconfig.core.io.WritingMode;
-import ironfurnaces.init.Registration;
-import net.minecraft.entity.item.ItemEntity;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.ItemStack;
 import net.minecraft.world.IWorld;
 import net.minecraftforge.common.ForgeConfigSpec;
 import net.minecraftforge.event.TickEvent;
@@ -221,7 +218,7 @@ public class Config {
     }
 
     public static void loadConfig(ForgeConfigSpec spec, Path path) {
-        IronFurnaces.LOGGER.debug("Loading config file {}", path);
+        AmcFurnaces.LOGGER.debug("Loading config file {}", path);
 
         final CommentedFileConfig configData = CommentedFileConfig.builder(path)
                 .sync()
@@ -229,9 +226,9 @@ public class Config {
                 .writingMode(WritingMode.REPLACE)
                 .build();
 
-        IronFurnaces.LOGGER.debug("Built TOML config for {}", path.toString());
+        AmcFurnaces.LOGGER.debug("Built TOML config for {}", path.toString());
         configData.load();
-        IronFurnaces.LOGGER.debug("Loaded TOML config file {}", path.toString());
+        AmcFurnaces.LOGGER.debug("Loaded TOML config file {}", path.toString());
         spec.setConfig(configData);
     }
 
@@ -259,7 +256,7 @@ public class Config {
             if (player != null)
             {
                 Config.GIVEN_COAL.set(true);
-                player.level.addFreshEntity(new ItemEntity(player.level, player.position().x, player.position().y, player.position().z, new ItemStack(Registration.RAINBOW_COAL)));
+                //player.level.addFreshEntity(new ItemEntity(player.level, player.position().x, player.position().y, player.position().z, new ItemStack(Registration.RAINBOW_COAL)));
             }
         }
     }

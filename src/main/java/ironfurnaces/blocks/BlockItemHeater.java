@@ -1,6 +1,6 @@
 package ironfurnaces.blocks;
 
-import ironfurnaces.IronFurnaces;
+import ironfurnaces.AmcFurnaces;
 import ironfurnaces.gui.BlockIronFurnaceScreenBase;
 import ironfurnaces.util.StringHelper;
 import net.minecraft.block.Block;
@@ -31,8 +31,8 @@ public class BlockItemHeater extends BlockItem {
         }
         if (BlockIronFurnaceScreenBase.isShiftKeyDown())
         {
-            tooltip.add(new TranslationTextComponent("tooltip." + IronFurnaces.MOD_ID + ".heater_block").setStyle(Style.EMPTY.applyFormat((TextFormatting.GRAY))));
-            tooltip.add(new TranslationTextComponent("tooltip." + IronFurnaces.MOD_ID + ".heater_block1").setStyle(Style.EMPTY.applyFormat((TextFormatting.GRAY))));
+            tooltip.add(new TranslationTextComponent("tooltip." + AmcFurnaces.MOD_ID + ".heater_block").setStyle(Style.EMPTY.applyFormat((TextFormatting.GRAY))));
+            tooltip.add(new TranslationTextComponent("tooltip." + AmcFurnaces.MOD_ID + ".heater_block1").setStyle(Style.EMPTY.applyFormat((TextFormatting.GRAY))));
         }
         else
         {

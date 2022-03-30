@@ -86,6 +86,7 @@ public abstract class BlockIronFurnaceTileBase extends TileEntityInventory imple
 
 
     public BlockIronFurnaceTileBase(TileEntityType<?> tileentitytypeIn) {
+
         super(tileentitytypeIn, 4);
         this.recipeType = IRecipeType.SMELTING;
         furnaceSettings = new FurnaceSettings() {
@@ -108,6 +109,7 @@ public abstract class BlockIronFurnaceTileBase extends TileEntityInventory imple
                 this.recipeType = IRecipeType.BLASTING;
             }
         }
+
         if (stack.getItem() instanceof ItemAugmentSmoking) {
             if (this.recipeType != IRecipeType.SMOKING) {
                 this.recipeType = IRecipeType.SMOKING;
@@ -117,6 +119,7 @@ public abstract class BlockIronFurnaceTileBase extends TileEntityInventory imple
         {
             if (this.recipeType != IRecipeType.SMELTING) {
                 this.recipeType = IRecipeType.SMELTING;
+                System.out.println("smelting");
             }
         }
         if (this.recipeType == IRecipeType.BLASTING) {
@@ -331,6 +334,7 @@ public abstract class BlockIronFurnaceTileBase extends TileEntityInventory imple
 
             if (this.totalCookTime != get_cook_time) {
                 this.totalCookTime = get_cook_time;
+                System.out.println(this.totalCookTime);
             }
             int mode = this.getRedstoneSetting();
             if (mode != 0) {
@@ -529,6 +533,7 @@ public abstract class BlockIronFurnaceTileBase extends TileEntityInventory imple
                                         ItemStack stack = other.extractItem(i, other.getStackInSlot(i).getMaxStackSize(), true);
                                         if (isItemFuel(stack) && getItem(FUEL).isEmpty() || ItemHandlerHelper.canItemStacksStack(getItem(FUEL), stack)) {
                                             insertItemInternal(FUEL, other.extractItem(i, other.getStackInSlot(i).getMaxStackSize() - this.getItem(FUEL).getCount(), false), false);
+                                            System.out.println("test3");
                                         }
                                     }
                                 }
@@ -754,6 +759,7 @@ public abstract class BlockIronFurnaceTileBase extends TileEntityInventory imple
     protected boolean canSmelt(@Nullable IRecipe<?> recipe) {
         if (!this.inventory.get(0).isEmpty() && recipe != null) {
             ItemStack recipeOutput = recipe.getResultItem();
+            System.out.println(recipe.getResultItem());
             if (!recipeOutput.isEmpty()) {
                 ItemStack output = this.inventory.get(OUTPUT);
                 if (output.isEmpty()) return true;
@@ -786,6 +792,7 @@ public abstract class BlockIronFurnaceTileBase extends TileEntityInventory imple
             if (ModList.get().isLoaded("pmmo")) {
                 FurnaceHandler.handleSmelted(itemstack, itemstack2, level, worldPosition, 0);
                 if (this.recipeType == IRecipeType.SMOKING) {
+                    System.out.println("pmmo");
                     FurnaceHandler.handleSmelted(itemstack, itemstack2, level, worldPosition, 1);
                 }
             }

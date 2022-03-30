@@ -1,6 +1,6 @@
 package ironfurnaces.items;
 
-import ironfurnaces.IronFurnaces;
+import ironfurnaces.AmcFurnaces;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -25,8 +25,8 @@ public class ItemSpooky extends Item {
     @OnlyIn(Dist.CLIENT)
     @Override
     public void appendHoverText(ItemStack stack, @Nullable World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
-        tooltip.add(new TranslationTextComponent("tooltip." + IronFurnaces.MOD_ID + ".spooky_right_click").setStyle(Style.EMPTY.applyFormat((TextFormatting.GRAY))));
-        tooltip.add(new TranslationTextComponent("tooltip." + IronFurnaces.MOD_ID + ".spooky1").setStyle(Style.EMPTY.applyFormat((TextFormatting.GRAY))));
-        tooltip.add(new TranslationTextComponent("tooltip." + IronFurnaces.MOD_ID + ".spooky2").setStyle(Style.EMPTY.applyFormat((TextFormatting.GRAY))));
+        tooltip.add(new TranslationTextComponent("tooltip." + AmcFurnaces.MOD_ID + ".spooky_right_click").setStyle(Style.EMPTY.applyFormat((TextFormatting.GRAY))));
+        tooltip.add(new TranslationTextComponent("tooltip." + AmcFurnaces.MOD_ID + ".spooky1").setStyle(Style.EMPTY.applyFormat((TextFormatting.GRAY))));
+        tooltip.add(new TranslationTextComponent("tooltip." + AmcFurnaces.MOD_ID + ".spooky2").setStyle(Style.EMPTY.applyFormat((TextFormatting.GRAY))));
     }
 }

@@ -1,6 +1,6 @@
 package ironfurnaces.gui;
 
-import ironfurnaces.IronFurnaces;
+import ironfurnaces.AmcFurnaces;
 import ironfurnaces.container.BlockVibraniumFurnaceContainer;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.util.ResourceLocation;
@@ -14,6 +14,6 @@ public class BlockVibraniumFurnaceScreen extends BlockIronFurnaceScreenBase<Bloc
 
     public BlockVibraniumFurnaceScreen(BlockVibraniumFurnaceContainer container, PlayerInventory inv, ITextComponent name) {
         super(container, inv, name);
-        this.GUI = new ResourceLocation(IronFurnaces.MOD_ID + ":" +"textures/gui/furnace_vibranium.png");
+        this.GUI = new ResourceLocation(AmcFurnaces.MOD_ID + ":" +"textures/gui/furnace_vibranium.png");
     }
 }

@@ -1,6 +1,6 @@
 package ironfurnaces.items;
 
-import ironfurnaces.IronFurnaces;
+import ironfurnaces.AmcFurnaces;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.text.ITextComponent;
@@ -23,7 +23,7 @@ public class ItemAugmentSpeed extends ItemAugment {
     @Override
     public void appendHoverText(ItemStack stack, World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
         super.appendHoverText(stack, worldIn, tooltip, flagIn);
-        tooltip.add(new TranslationTextComponent("tooltip." + IronFurnaces.MOD_ID + ".augment_speed_pro").setStyle(Style.EMPTY.applyFormat((TextFormatting.GREEN))));
-        tooltip.add(new TranslationTextComponent("tooltip." + IronFurnaces.MOD_ID + ".augment_speed_con").setStyle(Style.EMPTY.applyFormat(TextFormatting.DARK_RED)));
+        tooltip.add(new TranslationTextComponent("tooltip." + AmcFurnaces.MOD_ID + ".augment_speed_pro").setStyle(Style.EMPTY.applyFormat((TextFormatting.GREEN))));
+        tooltip.add(new TranslationTextComponent("tooltip." + AmcFurnaces.MOD_ID + ".augment_speed_con").setStyle(Style.EMPTY.applyFormat(TextFormatting.DARK_RED)));
     }
 }

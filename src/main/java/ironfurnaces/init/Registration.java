@@ -1,7 +1,6 @@
 package ironfurnaces.init;
 
-import ironfurnaces.Config;
-import ironfurnaces.IronFurnaces;
+import ironfurnaces.AmcFurnaces;
 import ironfurnaces.blocks.*;
 import ironfurnaces.container.*;
 import ironfurnaces.items.*;
@@ -19,14 +18,13 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
 import net.minecraftforge.common.extensions.IForgeContainerType;
-import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.ModList;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 
-import static ironfurnaces.IronFurnaces.MOD_ID;
+import static ironfurnaces.AmcFurnaces.MOD_ID;
 
 public class Registration {
 
@@ -45,6 +43,17 @@ public class Registration {
         //ENTITIES.register(FMLJavaModLoadingContext.get().getModEventBus());
         //DIMENSIONS.register(FMLJavaModLoadingContext.get().getModEventBus());
     }
+
+
+    public static final RegistryObject<BlockAlphariumFurnace> ALPHARIUM_FURNACE = BLOCKS.register(BlockAlphariumFurnace.ALPHARIUM_FURNACE, () -> new BlockAlphariumFurnace(AbstractBlock.Properties.copy(Blocks.NETHERITE_BLOCK)));
+    public static final RegistryObject<Item> ALPHARIUM_FURNACE_ITEM = ITEMS.register(BlockAlphariumFurnace.ALPHARIUM_FURNACE, () -> new BlockItem(ALPHARIUM_FURNACE.get(), new Item.Properties().tab(ModSetup.ITEM_GROUP)));
+    public static final RegistryObject<TileEntityType<BlockAlphariumFurnaceTile>> ALPHARIUM_FURNACE_TILE = TILES.register(BlockAlphariumFurnace.ALPHARIUM_FURNACE, () -> TileEntityType.Builder.of(BlockAlphariumFurnaceTile::new, ALPHARIUM_FURNACE.get()).build(null));
+
+    public static final RegistryObject<ContainerType<BlockAlphariumFurnaceContainer>> ALPHARIUM_FURNACE_CONTAINER = CONTAINERS.register(BlockAlphariumFurnace.ALPHARIUM_FURNACE, () -> IForgeContainerType.create((windowId, inv, data) -> {
+        BlockPos pos = data.readBlockPos();
+        World world = inv.player.getEntity().level;
+        return new BlockAlphariumFurnaceContainer(windowId, world, pos, inv, inv.player);
+    }));
 
 
     public static final RegistryObject<BlockIronFurnace> IRON_FURNACE = BLOCKS.register(BlockIronFurnace.IRON_FURNACE, () -> new BlockIronFurnace(AbstractBlock.Properties.copy(Blocks.IRON_BLOCK)));
@@ -227,29 +236,11 @@ public class Registration {
     //public static final RegistryObject<ItemLinker> ITEM_LINKER = ITEMS.register("item_linker", () -> new ItemLinker(new Item.Properties().tab(ModSetup.ITEM_GROUP).stacksTo(1)));
 
     public static final BlockMillionFurnace MILLION_FURNACE = new BlockMillionFurnace(AbstractBlock.Properties.copy(Blocks.IRON_BLOCK));
-    public static final Item MILLION_FURNACE_ITEM = new ItemMillionFurnace(MILLION_FURNACE, new Item.Properties().tab(ModSetup.ITEM_GROUP)).setRegistryName(IronFurnaces.MOD_ID, BlockMillionFurnace.MILLION_FURNACE);
-
-    public static final Item RAINBOW_CORE = new Item(new Item.Properties().tab(ModSetup.ITEM_GROUP)).setRegistryName(IronFurnaces.MOD_ID, "rainbow_core");
-    public static final Item RAINBOW_PLATING = new Item(new Item.Properties().tab(ModSetup.ITEM_GROUP)).setRegistryName(IronFurnaces.MOD_ID, "rainbow_plating");
-    public static final ItemRainbowCoal RAINBOW_COAL = new ItemRainbowCoal(new Item.Properties().tab(ModSetup.ITEM_GROUP));
+    public static final Item MILLION_FURNACE_ITEM = new ItemMillionFurnace(MILLION_FURNACE, new Item.Properties().tab(ModSetup.ITEM_GROUP)).setRegistryName(AmcFurnaces.MOD_ID, BlockMillionFurnace.MILLION_FURNACE);
 
 
-    public static void registerBlocks(RegistryEvent.Register<Block> event)
-    {
-        if (Config.enableRainbowContent.get())
-        {
-            event.getRegistry().registerAll(MILLION_FURNACE);
-        }
-    }
 
 
-    public static void registerItems(RegistryEvent.Register<Item> event)
-    {
-        if (Config.enableRainbowContent.get())
-        {
-            event.getRegistry().registerAll(MILLION_FURNACE_ITEM, RAINBOW_CORE, RAINBOW_PLATING, RAINBOW_COAL);
-        }
-    }
 
     public static final RegistryObject<TileEntityType<BlockMillionFurnaceTile>> MILLION_FURNACE_TILE = TILES.register(BlockMillionFurnace.MILLION_FURNACE, () -> TileEntityType.Builder.of(BlockMillionFurnaceTile::new, MILLION_FURNACE).build(null));
 

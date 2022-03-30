@@ -1,7 +1,7 @@
 package ironfurnaces.util;
 
 import com.google.common.collect.Lists;
-import ironfurnaces.IronFurnaces;
+import ironfurnaces.AmcFurnaces;
 import net.minecraft.util.text.*;
 
 import java.text.DecimalFormat;
@@ -27,9 +27,9 @@ public class StringHelper {
     {
         List<ITextComponent> list = Lists.newArrayList();
         list.add(new TranslationTextComponent("tooltip.ironfurnaces.gui_close"));
-        IFormattableTextComponent tooltip1 = new TranslationTextComponent("tooltip." + IronFurnaces.MOD_ID + ".gui_hold_shift");
+        IFormattableTextComponent tooltip1 = new TranslationTextComponent("tooltip." + AmcFurnaces.MOD_ID + ".gui_hold_shift");
         IFormattableTextComponent shift = new StringTextComponent("[Shift]");
-        IFormattableTextComponent tooltip2 = new TranslationTextComponent("tooltip." + IronFurnaces.MOD_ID + ".gui_shift_more_options");
+        IFormattableTextComponent tooltip2 = new TranslationTextComponent("tooltip." + AmcFurnaces.MOD_ID + ".gui_shift_more_options");
         tooltip1.withStyle(TextFormatting.GRAY);
         shift.withStyle(TextFormatting.GOLD, TextFormatting.ITALIC);
         tooltip2.withStyle(TextFormatting.GRAY);
@@ -39,9 +39,9 @@ public class StringHelper {
 
     public static ITextComponent getShiftInfoText()
     {
-        IFormattableTextComponent tooltip1 = new TranslationTextComponent("tooltip." + IronFurnaces.MOD_ID + ".hold");
+        IFormattableTextComponent tooltip1 = new TranslationTextComponent("tooltip." + AmcFurnaces.MOD_ID + ".hold");
         IFormattableTextComponent shift = new StringTextComponent("[Shift]");
-        IFormattableTextComponent tooltip2 = new TranslationTextComponent("tooltip." + IronFurnaces.MOD_ID + ".for_details");
+        IFormattableTextComponent tooltip2 = new TranslationTextComponent("tooltip." + AmcFurnaces.MOD_ID + ".for_details");
         tooltip1.withStyle(TextFormatting.GRAY);
         shift.withStyle(TextFormatting.GOLD, TextFormatting.ITALIC);
         tooltip2.withStyle(TextFormatting.GRAY);

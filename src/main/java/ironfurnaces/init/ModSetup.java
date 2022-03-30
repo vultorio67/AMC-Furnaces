@@ -1,15 +1,15 @@
 package ironfurnaces.init;
 
-import ironfurnaces.IronFurnaces;
+import ironfurnaces.AmcFurnaces;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 
-@Mod.EventBusSubscriber(modid = IronFurnaces.MOD_ID, bus = Mod.EventBusSubscriber.Bus.FORGE)
+@Mod.EventBusSubscriber(modid = AmcFurnaces.MOD_ID, bus = Mod.EventBusSubscriber.Bus.FORGE)
 public class ModSetup {
 
-    public static final ItemGroup ITEM_GROUP = new ItemGroup(IronFurnaces.MOD_ID) {
+    public static final ItemGroup ITEM_GROUP = new ItemGroup(AmcFurnaces.MOD_ID) {
 
         @Override
         public ItemStack makeIcon() {

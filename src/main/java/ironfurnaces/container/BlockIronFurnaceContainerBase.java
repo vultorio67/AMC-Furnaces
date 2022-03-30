@@ -1,6 +1,6 @@
 package ironfurnaces.container;
 
-import ironfurnaces.IronFurnaces;
+import ironfurnaces.AmcFurnaces;
 import ironfurnaces.tileentity.BlockIronFurnaceTileBase;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
@@ -87,15 +87,15 @@ public abstract class BlockIronFurnaceContainerBase extends Container {
         switch (te.furnaceSettings.get(index))
         {
             case 1:
-                return new TranslationTextComponent("tooltip." + IronFurnaces.MOD_ID + ".gui_input");
+                return new TranslationTextComponent("tooltip." + AmcFurnaces.MOD_ID + ".gui_input");
             case 2:
-                return new TranslationTextComponent("tooltip." + IronFurnaces.MOD_ID + ".gui_output");
+                return new TranslationTextComponent("tooltip." + AmcFurnaces.MOD_ID + ".gui_output");
             case 3:
-                return new TranslationTextComponent("tooltip." + IronFurnaces.MOD_ID + ".gui_input_output");
+                return new TranslationTextComponent("tooltip." + AmcFurnaces.MOD_ID + ".gui_input_output");
             case 4:
-                return new TranslationTextComponent("tooltip." + IronFurnaces.MOD_ID + ".gui_fuel");
+                return new TranslationTextComponent("tooltip." + AmcFurnaces.MOD_ID + ".gui_fuel");
             default:
-                return new TranslationTextComponent("tooltip." + IronFurnaces.MOD_ID + ".gui_none");
+                return new TranslationTextComponent("tooltip." + AmcFurnaces.MOD_ID + ".gui_none");
         }
     }
 

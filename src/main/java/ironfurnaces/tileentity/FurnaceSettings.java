@@ -1,7 +1,7 @@
 package ironfurnaces.tileentity;
 
+import ironfurnaces.AmcFurnaces;
 import ironfurnaces.Config;
-import ironfurnaces.IronFurnaces;
 import net.minecraft.nbt.CompoundNBT;
 
 public class FurnaceSettings {
@@ -44,9 +44,9 @@ public class FurnaceSettings {
             }
         } catch (ArrayIndexOutOfBoundsException e) {
             if (Config.showErrors.get()) {
-                IronFurnaces.LOGGER.error("Something went wrong.");
+                AmcFurnaces.LOGGER.error("Something went wrong.");
                 for (int i = 0; i < e.getStackTrace().length; i++) {
-                    IronFurnaces.LOGGER.error(e.getStackTrace()[i].toString());
+                    AmcFurnaces.LOGGER.error(e.getStackTrace()[i].toString());
                 }
             }
         }
@@ -92,9 +92,9 @@ public class FurnaceSettings {
             onChanged();
         } catch (ArrayIndexOutOfBoundsException e) {
             if (Config.showErrors.get()) {
-                IronFurnaces.LOGGER.error("Something went wrong.");
+                AmcFurnaces.LOGGER.error("Something went wrong.");
                 for (int i = 0; i < e.getStackTrace().length; i++) {
-                    IronFurnaces.LOGGER.error(e.getStackTrace()[i].toString());
+                    AmcFurnaces.LOGGER.error(e.getStackTrace()[i].toString());
                 }
             }
         }

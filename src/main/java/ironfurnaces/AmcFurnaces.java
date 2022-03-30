@@ -19,20 +19,20 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 // The value here should match an entry in the META-INF/mods.toml file
-@Mod(IronFurnaces.MOD_ID)
+@Mod(AmcFurnaces.MOD_ID)
 @Mod.EventBusSubscriber(bus=Mod.EventBusSubscriber.Bus.MOD)
-public class IronFurnaces
+public class AmcFurnaces
 {
 
     public static final String MOD_ID = "ironfurnaces";
-    public static final String VERSION = "277";
+    public static final String VERSION = "1";
     public static final String MC_VERSION = "1.16.5";
 
     public static final Logger LOGGER = LogManager.getLogger();
 
     public static IEventBus MOD_EVENT_BUS;
 
-    public IronFurnaces() {
+    public AmcFurnaces() {
 
         Messages.registerMessages(MOD_ID + "_network");
 
@@ -54,19 +54,19 @@ public class IronFurnaces
         if (Config.checkUpdates.get()) {
             new UpdateChecker();
         } else {
-            IronFurnaces.LOGGER.warn("You have disabled Iron Furnaces's Update Checker, to re-enable: change the value of Update Checker in .minecraft->config->ironfurnaces-client.toml to 'true'.");
+            AmcFurnaces.LOGGER.warn("You have disabled Iron Furnaces's Update Checker, to re-enable: change the value of Update Checker in .minecraft->config->ironfurnaces-client.toml to 'true'.");
         }
     }
 
     @SubscribeEvent
     public static void registerBlocks(RegistryEvent.Register<Block> event)
     {
-        Registration.registerBlocks(event);
+        //Registration.registerBlocks(event);
     }
 
     @SubscribeEvent
     public static void registerItems(RegistryEvent.Register<Item> event)
     {
-        Registration.registerItems(event);
+        //Registration.registerItems(event);
     }
 }

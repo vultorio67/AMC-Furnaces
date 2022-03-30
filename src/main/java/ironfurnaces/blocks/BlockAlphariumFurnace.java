@@ -1,20 +1,19 @@
 package ironfurnaces.blocks;
 
-import ironfurnaces.AmcFurnaces;
-import ironfurnaces.tileentity.BlockMillionFurnaceTile;
+import ironfurnaces.tileentity.BlockAlphariumFurnaceTile;
+import ironfurnaces.tileentity.BlockIronFurnaceTile;
 import net.minecraft.block.BlockState;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.IBlockReader;
 
 import javax.annotation.Nullable;
 
-public class BlockMillionFurnace extends BlockIronFurnaceBase {
+public class BlockAlphariumFurnace extends BlockIronFurnaceBase {
 
-    public static final String MILLION_FURNACE = "million_furnace";
+    public static final String ALPHARIUM_FURNACE = "alpharium_furnace";
 
-    public BlockMillionFurnace(Properties properties) {
+    public BlockAlphariumFurnace(Properties properties) {
         super(properties);
-        setRegistryName(AmcFurnaces.MOD_ID, MILLION_FURNACE);
     }
 
     @Override
@@ -25,6 +24,6 @@ public class BlockMillionFurnace extends BlockIronFurnaceBase {
     @Nullable
     @Override
     public TileEntity createTileEntity(BlockState state, IBlockReader world) {
-        return new BlockMillionFurnaceTile();
+        return new BlockAlphariumFurnaceTile();
     }
 }
