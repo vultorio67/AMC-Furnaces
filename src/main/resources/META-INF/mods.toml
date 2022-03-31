@@ -12,7 +12,7 @@ modId="ironfurnaces" #mandatory
 
 version="${file.jarVersion}" #mandatory
 
-displayName="Iron Furnaces" #mandatory
+displayName="AMC Iron Furnaces" #mandatory
 
 logoFile="ironfurnaces_logo.png"
 
