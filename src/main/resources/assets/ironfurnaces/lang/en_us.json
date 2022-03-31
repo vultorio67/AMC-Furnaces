@@ -58,6 +58,7 @@
 
 
     "_comment": "GUI",
+    "container.alphariumfurnace.iron_furnace": "Alpharium Furnace",
     "container.ironfurnaces.iron_furnace": "Iron Furnace",
     "container.ironfurnaces.gold_furnace": "Golden Furnace",
     "container.ironfurnaces.diamond_furnace": "Diamond Furnace",
